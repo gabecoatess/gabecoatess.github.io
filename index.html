@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Coates - Portfolio</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <h1 class="site-title">I'm Gabriel.</h1>
+    <nav class="nav">
+        <a class="nav-logo" href="https://github.com/gabecoatess" target="_blank" rel="noopener noreferrer">
+            <img src="https://www.gravatar.com/avatar/883a92bdba95b06bfe6dca93376871de" alt="gabecoatess">
+        </a>
+        <ul class="nav-menu">
+            <li>
+                <a href="#">Roadmap</a>
+            </li>
+            <li>
+                <a href="#">Social</a>
+            </li>
+            <li>
+                <a id="moreinfo" href="#">More Information</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="site-container">
+        <div id="who" class="site-info">
+            <h2 class="info-titles">Who's that?</h2>
+            <p>
+                I am a 16-year-old developer in my sophomore year of high school. 
+                Currently, I am familiar with HTML and a little bit of Python and CSS. 
+                Everyday I wake up, my goal is always to grow my portfolio to one day program 
+                something useful that millions, if not billions, of people use everyday.
+            </p>
+        </div>
+
+        <div id="when" class="site-info">
+            <h2 class="info-titles">When did I start?</h2>
+            <p>
+                I am not 100% sure when I first started learning how to program. But what I can 
+                say is that I had just recently (the past 8-months) discovered a whole new world 
+                of programming. Things like using many different languages to create one project, 
+                APIs, libraries, and frameworks. I am just now grasping how big the world of programming
+                can be. It's an adventure filled with challenges I'd like to take head on.
+            </p>
+        </div>
+
+        <div id="other" class="site-info">
+            <h2 class="info-titles">Any other hobbies?</h2>
+            <p>
+                I love to play video games. If it weren't for them, I wouldn't be here today. That is 
+                because I spend most of my day playing them. I started out with sandbox games like <a href="https://www.roblox.com/" target="_blank" rel="noopener noreferrer">Roblox</a>
+                and <a href="https://www.minecraft.net/" target="_blank" rel="noopener noreferrer">Minecraft</a>. In fact, Roblox was what inspired me to start learning how to code. 
+                Specifically by hyping game development through their free game engine called <a href="https://www.roblox.com/create/" target="_blank" rel="noopener noreferrer">Roblox Studio</a>,
+            </p>
+        </div>
+
+        <div id="how" class="site-info">
+        <h2 class="info-titles">What are your next steps?</h2>
+            <p>
+                This website is my first big leap into programming greatness. Using things like <a href="https://stackoverflow.com/" target="_blank" rel="noopener noreferrer">Stack Overflow</a>, <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a>, 
+                <a href="https://www.reddit.com/" target="_blank" rel="noopener noreferrer">Reddit</a>, and <a href="#">other public resources</a>, I will learn how to become a Full Stack Developer! 
+                In simple terms, a <b>Full Stack Developer</b> is an expert in programming what someone at home sees and what  
+                someone in a company sees. Such as the style of a sign-up page and how that information is stored within 
+                the companies computers (<a href="https://en.wikipedia.org/wiki/Data_center" target="_blank" rel="noopener noreferrer">data centers</a>). 
+                You can check out my roadmap and similar general roadmaps on my <a href="#">roadmap page</a>.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
