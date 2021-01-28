@@ -86,7 +86,6 @@ a:hover {
     grid-template-columns: auto 1fr;
     background: rgba(128, 128, 128, 0.089);
     border-radius: 100px;
-    align-items: center;
 }
 
 .nav-logo {
@@ -131,4 +130,11 @@ a:hover {
 
 #moreinfo {
     margin-right: 20px;
+}
+
+.site-logo {
+    width: 300px;
+    margin: 20px auto;
+    display: grid;
+    align-items: center;
 }
