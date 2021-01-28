@@ -15,7 +15,9 @@
             <img src="https://www.gravatar.com/avatar/883a92bdba95b06bfe6dca93376871de" alt="gabecoatess">
         </a>
         <ul class="nav-menu">
-            <p>Roadmap</p>
+            <li>
+                <a href="https://gabecoatess.github.io/roadmap">Roadmap</a>
+            </li>
             <li>
                 <a href="https://gabecoatess.github.io/social">Social</a>
             </li>
