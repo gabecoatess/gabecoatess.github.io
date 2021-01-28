@@ -42,43 +42,8 @@ a:hover {
     text-decoration: underline;
 }
 
-.site-info {
-    background-color: #181818;
-    text-align: center;
-    margin-top: 20px;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px #00000062;
-}
-
-.info-titles {
-    margin-bottom: 10px;
-}
-
-.site-title {
-    text-align: center;
-    margin-top: 30px;
-}
-
 .site-container {
-    width: 50%;
     margin: auto auto 30px;
-}
-
-#who {
-    margin-left: 50px;
-}
-
-#when {
-    margin-right: 50px;
-}
-
-#other {
-    margin-left: 50px;
-}
-
-#how {
-    margin-right: 50px;
 }
 
 .nav {
@@ -142,4 +107,27 @@ a:hover {
     margin: 20px auto;
     display: grid;
     align-items: center;
+}
+
+#roadmap-image {
+    width: 905px;
+    height: 789px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #00000062;
+}
+
+.roadmap-information {
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.roadmap-information h1 {
+    margin-top: 10px;
 }
