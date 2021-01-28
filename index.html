@@ -9,14 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet"> 
 </head>
 <body>
-    <h1 class="site-title">I'm Gabriel.</h1>
+    <img class="site-logo" src="images/imgabriellogo.png" alt="I'm Gabriel.">
     <nav class="nav">
-        <a class="nav-logo" href="https://github.com/gabecoatess" target="_blank" rel="noopener noreferrer">
+        <a class="nav-logo" href="https://gabecoatess.github.io/">
             <img src="https://www.gravatar.com/avatar/883a92bdba95b06bfe6dca93376871de" alt="gabecoatess">
         </a>
         <ul class="nav-menu">
             <li>
-                <a href="#">Roadmap</a>
+                <a href="roadmap.html">Roadmap</a>
             </li>
             <li>
                 <a href="#">Social</a>
