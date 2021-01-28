@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriel Coates - Portfolio</title>
+    <title>I'm Gabriel - Home</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet"> 
@@ -12,17 +12,17 @@
     <img class="site-logo" src="images/imgabriellogo.png" alt="I'm Gabriel.">
     <nav class="nav">
         <a class="nav-logo" href="https://gabecoatess.github.io/">
-            <img src="https://www.gravatar.com/avatar/883a92bdba95b06bfe6dca93376871de" alt="gabecoatess">
+            <img src="https://www.gravatar.com/avatar/883a92bdba95b06bfe6dca93376871de" alt="Home">
         </a>
         <ul class="nav-menu">
             <li>
-                <a href="roadmap.html">Roadmap</a>
+                <a href="https://gabecoatess.github.io/roadmap">Roadmap</a>
             </li>
             <li>
-                <a href="#">Social</a>
+                <a href="https://gabecoatess.github.io/social">Social</a>
             </li>
             <li>
-                <a id="moreinfo" href="#">More Information</a>
+                <a id="moreinfo" href="https://gabecoatess.github.io/moreinfo">More Information</a>
             </li>
         </ul>
     </nav>
