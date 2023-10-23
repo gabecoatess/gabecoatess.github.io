@@ -9,7 +9,7 @@ timezone: 'America/New_York'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: http://gabecoatess.com
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -74,10 +74,10 @@ meta_generator: true
 ## Hexo uses Moment.js to parse and display date
 ## You can customize the date format as defined in
 ## http://momentjs.com/docs/#/displaying/format/
-date_format: YYYY-MM-DD
-time_format: HH:mm:ss
+date_format: MMM-DD-YYYY
+time_format: hh:mm:ss
 ## updated_option supports 'mtime', 'date', 'empty'
-updated_option: 'mtime'
+updated_option: ',to,e'
 
 # Pagination
 ## Set per_page to 0 to disable pagination
@@ -93,7 +93,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: oranges
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
