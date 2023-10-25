@@ -563,7 +563,7 @@ Was this over engineered? Probably. Could it have been done more quickly by manu
 
 One future change I have in mind, apart from implementing some user-friendly updates, is a method to track the current ticket note JSON data. Even if the "export" button doesn't trigger the GET request, every time we switch between open tickets, it still initiates that request. I've explored how the PSA system handles this, and it fetches the ticket notes for all open tickets at once, leaving additional requests until the page is refreshed. I want to have similar efficiency, reducing the API calls to just one per page refresh.
 
-That pretty much sums up my findings in this project. If you're interested in reviewing the source code, you can find it on my GitHub page [link]. And if you'd like to see the final, neatly formatted notes, you can see them below:
+That pretty much sums up my findings in this project. If you're interested in reviewing the source code, you can [find it on my GitHub page](https://github.com/gabecoatess/PSANoteExporter). And if you'd like to see the final, neatly formatted notes, you can see them below:
 
 ```
 Activity Type: Status Changed
