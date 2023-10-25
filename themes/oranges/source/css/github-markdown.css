@@ -144,10 +144,6 @@
 }
 
 .markdown-body strong {
-  font-weight: inherit;
-}
-
-.markdown-body strong {
   font-weight: bolder;
 }
 
@@ -212,7 +208,7 @@
 }
 
 .markdown-body strong {
-  font-weight: 600;
+  font-weight: bolder;
 }
 
 .markdown-body hr {
