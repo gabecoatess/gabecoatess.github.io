@@ -1,0 +1,162 @@
+---
+title: Coates Industries Learning Environment (Part 1)
+date: 2025-12-4 12:00:00
+tags:
+---
+
+## Overview
+It has been about a year since I last posted and I feel like I need to start writing again to keep track of my personal and professional
+projects. There has been a lot of changes since last time, including a new job. I have now been working as a junior software engineer for a marketing
+company for a little under a year now. It has been a great experience and I have learned a lot. Best part is that I primarily work with C# at my job.
+It's a language that I am very familiar with and I would say would be my strongest language to program with.
+
+Anyways, the point of me bringing up my new job is to pivot into what is the Coates Industries Learning Environment and why I created it.
+At my company, our development team consists of a few different people. Each of them have their own specialization. One smaller "team" focuses
+primarily on customer facing web applications that are programmed using the JavaScript ecosystem. I'm not sure what frameworks or technologies
+they are using nor am I able to speak on that if I did know, but what I can say is that I am jealous with their progress and how "modern" their
+work looks. I know you can achieve the same in terms of frontend development, but something about web development makes me want to learn it more
+than I ever did. I used to hate web development and wouldn't touch it. But now I have this eagerness to create something with it.
+
+I have a much bigger project planned for all this, CILE is just the first bit and a sort of proof-of-concept/learning/test project to see if I have
+what it takes to proceed with my plans. For now though, I will only speak about CILE.
+
+## What is CILE?
+CILE is a solution to a problem many have faced in terms of learning using Large Language Models. There are actually a few issues with LLM's that
+make it difficult for anyone to learn a specific topic, especially with questions that can't be answered in one go. Here are a few:
+  1. LLM's love to hallucinate. This essentially means that they confidently state things as a fact when they are not. A good example of this is
+     asking an LLM to generate a Python script to accomplish a task and it uses a library that is either outdated by several years and does not work
+     with the current version or completely makes up a library/file that was never created in the first place.
+  2. LLM's also tend to overcomplicate explanations or not explain enough. This is because of the very limited response lengths. If you ask it to
+     teach you Quantum Physics, it will do its best but you just can't learn enough in a few small paragraphs. This also brings up the issue of
+     over simplified results that don't give you the full picture and build a narrow tunnel of knowledge that you don't know about.
+  3. LLM's tend to restate the same facts mentioned previously when asked follow-up questions. This can be especially frustrating because it can
+     waste a lot of time. It can also get quite annoying when it uses the same vocabulary to explain the topic. Its not different than a broken
+     record player.
+  4. LLM's cannot "plan" the way humans do. They don't understand how humans learn. They provide information the way their training has taught them.
+     This can be especially frustrating since learning any large topic can introduce holes in your knowledge as some things are covered and others
+     are skipped over. A recent example that I discovered is asking ChatGPT how to install a steering wheel in my car. One thing I noticed 
+     while reviewing its response is that it never suggested disconnecting the battery. It is important this is done so airbags don't deploy and
+     other potential issues. Even if ChatGPT were to tell me to disconnect the battery, there's a possibility it won't mention the order you
+     disconnect each terminal (which can cause some major issues if done incorrectly) and tell me WHY we are doing this. Which leads me into my
+     last point.
+  5. LLM's struggle with explaining the WHY behind things. I've been trying to learn how to build my own game engine for a long time now. I've created
+     a few very nice demos, but there is no way I can make a full game off of them. When I tried using LLM's for assistance, they kind of just
+     throw the answer at you. "Do this, do that, and don't forget this over here". It is a terrible way to learn by yourself. You just mindlessly
+     follow the instructions without, again, understanding the why things are done this way.
+
+CILE aims to solve all these issues to some extent. The idea is to build a platform similar to Udemy or Coursera where a user can prompt an LLM
+pipeline to generate a course on any topic. This course includes dozens of units, each with dozens of sections, and each with dozens of lessons.
+I have seen my proof-of-concept generate anywhere between 20 total lessons to 80+. It runs the users prompt along with several syste prompts
+through my content generation pipeline. As of right now, the full prompt is sent over to a free model to generate the course structure. Then using
+some magic, I am able to generate ALL lessons within the first section using a separate model. 
+
+Ideally, the pipeline would look something like this:
+  1. Send the total prompt to a model specifically for generating the course structure/hierarchy.
+  2. Send the total prompt and the newly generated course structure/hierarchy to explain each unit, section, and lesson objectives. 
+  3. Send the total prompt and the output of the last model to a model which checks the content is introduced smoothly to the user. Adding and
+     removing any units, sections, or lessons that may seem out of place. It runs it one more time to ensure everything is good to go to the next stage.
+  4. Last model takes the all the outputs and is sent a specific lesson to generate content for. It takes a brief summary of the lessons around it
+     and section its in to generate context while saving on token usages. It runs this two or three times to ensure vocabulary, concepts, and lessons
+     all flow nicely and are generated in a way that makes sense to learn.
+  
+I do plan on adding more checks to the pipeline but for now, I think this is a good goal to get to and I am already seeing really nice improvements
+to the responses I get. The good thing is that I can easily test to see if my platform works if I am able to generate a course on something I actually
+want to learn and have some decent knowledge on and following through to see if I have any gaps I need to fill with the course.
+
+CILE also will include some extras but are not the main focus of the application. I currently pay for Claude and ChatGPT. That's $40 a month. I don't
+use Claude often enough to justify paying for it but when I do use it I definitely need it. I also wish both would include "template" prompts or a
+prompt history since I often find myself reiterating the same prompt to give it context in a new chat. That is why I will be integrating my own "chat"
+page that allows me to interact with both models similar to the way I do now on their own websites.
+
+Another feature I really wish both had is some sort of "sub assistant" at the bottom right of my screen where I can simply highlight any part of the
+initial response from the model and ask the sub assistant to explain it more. For an example, if I ask how to program in C++ and it generates a response
+that includes the usage of pointers but doesn't explain what pointers are. Instead of reply to that chat for clarification and getting off topic or
+creating a new chat just for that explanation, I can simply open a little text chat at the bottom right of my page, select the text that mentions a
+pointer, and prompt the little guy for an explanation. It saves me money since I can use a smaller model for an explanation and allows the bigger model
+to continue on topic. This is especially useful inside the courses so you don't have to regenerate an entire lesson just for additional
+clarification.
+
+## Technologies Used
+I wanted to use something new for the runtime. I have used Node in the past and had no issue with it but I have heard of Bun which I thought would
+be pretty cool to use since its newer and some people like it more. I personally don't have enough experience to comment on whether I like Bun
+or Node more.
+
+For the application itself I am using Next.js. I have used React in the past so the whole "component" thing isn't to hard for me to understand.
+I didn't want to have to fiddle with the server and client being separate so I just decided to go with Next since I can easily use both inside
+the same framework.
+
+The styling has always been Tailwinds for me. Its easy and I despise CSS. However, I also wanted to try something new and use a component library
+to make my UI look a little nicer. For this I used Hero UI. It has worked great and so far I love the whole look and feel of the components.
+
+One thing I never do is icons. Icons are a very important aspect of any application because it can convey information quicker than words. I decided
+to go with Lucide for my icons. It has tons of them and they all look pretty sleek. It definitely has worked for my use case and I will probably
+use it for my future projects going forward.
+
+The database is a simple Postgres database that is provided by Neon. I haven't had a single issue using them and I believe they are directly or
+somewhat integrated with Vercel so if I ever need to deploy my apps to the web, I can simply use Vercel without having to fiddle with the database much.
+
+To communicate with the database in my app, I wanted something that was similar to Acumatica BQL. I tried using Prisma as that is the most suggested
+ORM library out there but I just couldn't get my brain to think in Prisma. I decided to try out Kysely and I haven't looked back. It's different
+from Prisma as it is primarily a query builder. I still have to build all the types myself but since I am learning I have no problem with this.
+I did also see some automated generation in their documentation but haven't looked into it. Maybe next time.
+
+To communicate with the several hundred LLM's that I can use, I decided to go with OpenRouter. You sign up, pay for a few credits, they give you an
+API key, and then you are free to programmatically call any LLM you so choose. I want to use their platform more but for now its just for development.
+No issues here except for the fact that some of the free models I have been using take quite a long time to generate their response. I also have
+local LLM capabilities but haven't used that yet.
+
+Finally, to wrap everything up, my programming language of choice was TypeScript. I have hardly any experience with JavaScript or TypeScript. I knew
+I wanted type safety and enjoy statically typed languages like my beloved C#. Even though I've heard TypeScript can be a pain to learn because
+of similar struggles with learning Rust, I opted to use it anyways and so far I am enjoying it.
+
+## My Struggles
+I struggled in pretty much every single corner building this application. But it was very fun. I knew what I was getting myself into and I knew
+learning all these technologies were a major requirement for my big 2026 plans. However, I will say I had three major struggles that took a lot to
+overcome.
+
+The first is figuring out the best way to interact with the database. I still don't think I'm doing it correctly and there is a lot of room for
+improvement/optimization. For one user using the platform, it should be fine. But if I were to ever release this project to the public (never),
+I can already see production being a gigantic stress test that will fail miserably. Databases are hard to get right for beginners.
+
+The second thing I struggled with is getting the pipeline working. Most of the application is just simple React stuff. Components here and there
+and a ton of rendering. Most functions that were not rendering were database calls or simple calculations. This is easy to get done.
+However, getting the pipeline working was much more complex because of the amount of database calls needed, loops, functions being called everywhere,
+and getting the LLM's to respond correctly. Though it is all working now, it will require a lot of major work whenever I want to add a new feature.
+If I have the time and patience, I will look into making the pipeline more robust. For now, I think it gets the job done and I shouldn't touch it.
+
+Lastly, fighting with TypeScript was a nightmare. The amount of obscure errors that I came across was the most I have ever seen. I had to install
+a VS Code extension just to "prettify" the errors. I couldn't tell you exactly what problems I faced but just know I struggled. I still plan on
+using TypeScript for other projects though. I would rather learn it than leave it be for something else.
+
+## Lessons Learned
+The biggest takeaway from this project is that I need to plan. I was coming up with the pages, UI design, component placement, and pipeline on the go.
+Pretty much every new feature was planned in that moment. Having a site skeleton and a good idea of the "happy path" that users will travel would
+help immensely. It'll also help when I eventually want to write automated tests with Selenium since I have a good idea of the path it should take.
+
+Handle errors early! Handle loading early! Adding these things were a pain in the ass. They are very simple conceptually but when you have a project
+as messy as this one, it is so difficult to add the correct error screens and loading screens that you need. You can always just opt for "an error
+has occured" or "loading", but I like a more detailed approach. What error has occured? Can we fix it? Can you fix it automatically? Whats loading?
+How long until its finished? Is the site frozen or am I waiting on something? These are all questions I had before adding these things to the site.
+Do it early, save yourself from the headaches.
+
+Last thing I will definitely focus on is making more development friendly changes. There was no site-wide configuration file where I can disable and
+enable features. It would be so beneficial if I can toggle off all the complex pipeline stuff just to test out the loading UI. I don't want to
+publish a new course to the database/LLM if I am just testing the UI. I also don't want to send anything to the database if I am simply testing
+the response format of the LLM or vice versa. The validation was a mess too. I had to fill out my course generation page settings each and every single
+time I wanted to test a small feature within the pipeline. It got to the point where I created a markdown file inside my repository that simply
+stores multiple different prompts like, "I want to learn woodworking" or "I want to learn how to build my own TV from scratch". Copying and pasting
+was quicker but still hurt my fingers. Just being able to disable validation and keeping those things empty or a "default development prompt" would
+have been very useful long term.
+
+## Going Forward
+There is still a lot to do with this project. I have a large list of items in my TODOs. I have zero authentication/authorization so anyone can create
+courses and its completely anonymous. There is also zero tracking or administrative actions. I have to manually delete courses from the database.
+I also want to do things like track errors and prompts that are being sent through as well as different responses from the LLM's. This will help
+keep track of errors or incorrect formats generated by the LLM's when other users are using the platform.
+
+Like I said, this will NOT be released to the public. Security beyond the basics is not my concern for this project and therefore it would not be safe
+to make it public. I'd also would have to make it paid and then have to deal with things like Stripe to collect payments. I don't want to do any of that
+right now. Maybe I will open source it one day, but for now it will stay private.
+
+## Screenshots
+None yet.
